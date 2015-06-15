@@ -51,7 +51,7 @@
                                 <!--<label for="name" style="color:white" class="col-sm-4 control-label">First Name</label>-->
                                 <div class="col-sm-6">
                                     @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Full Name" })
-                                    <div style="color:red">
+                                    <div style="color:yellow;font-size:1.5em">
                                         @Html.ValidationMessageFor(model => model.FirstName)
                                     </div>
                                     <!--<input type="text" class="form-control" id="name" name="FirstName" required placeholder="First Name">-->
@@ -62,7 +62,9 @@
                                 <!--<label for="name" style="color:white" class="col-sm-4 control-label">Last Name</label>-->
                                 <div class="col-sm-6">
                                     @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name" })
-                                    <div style="color:red">  @Html.ValidationMessageFor(model => model.LastName) </div>
+                                    <div style="color:yellow;font-size:1.5em">
+                                        @Html.ValidationMessageFor(model => model.LastName)
+                                    </div>
                                     <!--<input type="text" class="form-control" id="name" name="LastName" required placeholder="Last Name">-->
                                 </div>
                             </div>
@@ -71,12 +73,12 @@
                                 <!--<label for="email" style="color:white" class="col-sm-4 control-label">Email</label>-->
                                 <div class="col-sm-6">
                                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-Mail", id = "UserName" , Type = "email" })
-                                    <div style="color:red">
+                                    <div style="color:yellow;font-size:1.5em">
                                         @Html.ValidationMessageFor(model => model.Email)
                                     </div>
                                     <input type="button" id="b1" value="Check" class="btn btn-default" />
-                                    <div id="result1" style="color:red"></div>
-                                    <div id="result2" style="color:lightgreen"></div>
+                                    <div id="result1" style="color:red;font-size:1.5em"></div>
+                                    <div id="result2" style="color:lightgreen;font-size:1.5em"></div>
                                     @Scripts.Render("~/bundles/jquery")
                                     <script>
 
@@ -114,7 +116,7 @@
                                 <!--<label for="pass" style="color:white" class="col-sm-4 control-label">Password</label>-->
                                 <div class="col-sm-6">
                                     @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Password", Type = "password" })
-                                    <div style="color:red">
+                                    <div style="color:yellow;font-size:1.5em">
                                         @Html.ValidationMessageFor(model => model.Password)
                                     </div>
                                     <!--<input type="password" class="form-control" id="pass1" name="Password" required placeholder="Password">-->
@@ -126,7 +128,7 @@
                                 <!--<label for="pass" style="color:white" class="col-sm-4 control-label">Re-Enter Password</label>-->
                                 <div class="col-sm-6">
                                     @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Password", Type = "password" })
-                                    <div style="color:red">
+                                    <div style="color:yellow;font-size:1.5em">
                                         @Html.ValidationMessageFor(model => model.ConfirmPassword)
                                     </div>
                                 </div>
@@ -138,7 +140,7 @@
                                 <div class="col-sm-6">
                                     
                                     @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", placeholder = "MM/DD/YYYY" ,Type = "date"})
-                                    <div style="color:red">
+                                    <div style="color:yellow;font-size:1.5em">
                                         @Html.ValidationMessageFor(model => model.DateOfBirth)
                                     </div>
                                     <!--<input type="date"  class="form-control" id="add" name="DateOfBirth" required>-->
@@ -150,7 +152,7 @@
                                 <!--<label for="add" style="color:white" class="col-sm-4 control-label">City</label>-->
                                 <div class="col-sm-6">
                                     @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "City" })
-                                    <div style="color:red">
+                                    <div style="color:yellow;font-size:1.5em">
                                         @Html.ValidationMessageFor(model => model.City)
                                     </div>
                                     <!--<input type="text" class="form-control" id="add" name="City" required placeholder="City">-->
@@ -161,7 +163,7 @@
                                 <!--<label for="add" style="color:white" class="col-sm-4 control-label">Country</label>-->
                                 <div class="col-sm-6">
                                     @Html.TextBoxFor(m => m.Country, new { @class = "form-control", placeholder = "Country" })
-                                    <div style="color:red">
+                                    <div style="color:yellow;font-size:1.5em">
                                         @Html.ValidationMessageFor(model => model.Country)
                                     </div>
                                     <!--<input type="text" class="form-control" id="add" name="Country" required placeholder="Country">-->

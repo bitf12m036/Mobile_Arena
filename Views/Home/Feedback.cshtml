@@ -20,43 +20,40 @@
                         <!--<label for="name" style="color:white; font-size:15px" class="col-sm-4 control-label">Username</label>-->
                         <div class="col-sm-6">
                             @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Full Name" })
-                            <div style="color:red">
+                            <div style="color:yellow;font-size:1.5em">
                                 @Html.ValidationMessageFor(model => model.Name)
-                                </div>
+                            </div>
                             <!--<input type="text" class="form-control" id="name" name="Name" required placeholder="Full Name">-->
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label", Type= "email" })
-                        <!--<label for="pass" style="color:white; font-size:15px" class="col-sm-4 control-label">Email</label>-->
+                        @Html.LabelFor(m => m.Email, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label",  })
+                        
                         <div class="col-sm-6">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
-                            <div style="color:red">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", Type = "email" })
+                            <div style="color:yellow;font-size:1.5em">
                                 @Html.ValidationMessageFor(model => model.Email)
                                 </div>
-                            <!--<input type="text" class="form-control" id="email" name="Email" required placeholder="Email">-->
+                            
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Contact, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
-                        <!--<label for="pass" style="color:white; font-size:15px" class="col-sm-4 control-label">Contact</label>-->
+                       
                         <div class="col-sm-6">
                             @Html.TextBoxFor(m => m.Contact, new { @class = "form-control", placeholder = "Contact No" })
-                            <div style="color:red">
+                            <div style="color:yellow;font-size:1.5em">
                                 @Html.ValidationMessageFor(model => model.Contact)
-                                </div>
-                            <!--<input type="text" class="form-control" id="contact" name="Contact" required placeholder="Contact No">-->
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.Message, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
-                        <!--<label for="pass" style="color:white; font-size:15px" class="col-sm-4 control-label">Message</label>-->
+                        
                         <div class="col-sm-6">
                             @Html.TextAreaFor(m => m.Message, new { @class = "form-control", rows = "5" })
-                            
-                            <!--<input type="text" class="form-control input-lg" id="contact" name="Message" required placeholder="Your Message" />-->
-                            <!--<textarea class="form-control" name="Message" rows="5" ></textarea>-->
                         </div>
                     </div>
 
