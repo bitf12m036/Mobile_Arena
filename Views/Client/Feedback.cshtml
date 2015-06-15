@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Shared/ClientShared.cshtml";
+}
+
+@model Term_Project.Models.Feedback
+<div>
+<h1 class="h1" style="color:burlywood; font-size:4.5em; font-weight:bold; font-family:'Angsana New'; margin-left:25em">Feedback</h1>
+    <div class="row">
+        <div class=" col-lg-7">
+            <img class="img-rounded img-responsive" src="~/Content/image/feedback03.jpg" height="450" width="900" style="padding-left:3em">
+        </div>
+        <div class="col-lg-5" style="opacity:0.6; padding-left:2em; padding-top:7em">
+
+            @using (Html.BeginForm())
+            {
+                 @Html.AntiForgeryToken()
+                 @Html.ValidationSummary(true)
+            <!--<form class="form-horizontal" action="~/Home/SubmitFeedback" method="post">-->
+                <div class="row">
+
+                    <div class="form-group" >
+                        @Html.LabelFor(model => model.Name, new { style = "font-size:15px; color:white", @class="col-sm-4 control-label" })
+                        <!--<label for="name" style="color:white; font-size:15px" class="col-sm-4 control-label">Username</label>-->
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Full Name" })
+                            <div style="color:red">@Html.ValidationMessageFor(model => model.Name)</div>
+                            <!--<input type="text" class="form-control" id="name" name="Name" required placeholder="Full Name">-->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                        <!--<label for="pass" style="color:white; font-size:15px" class="col-sm-4 control-label">Email</label>-->
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                            <div style="color:red">
+                                @Html.ValidationMessageFor(model => model.Email)
+                                </div>
+                            <!--<input type="text" class="form-control" id="email" name="Email" required placeholder="Email">-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Contact, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                        <!--<label for="pass" style="color:white; font-size:15px" class="col-sm-4 control-label">Contact</label>-->
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.Contact, new { @class = "form-control", placeholder = "Contact No" })
+                            <div style="color:red">
+                                @Html.ValidationMessageFor(model => model.Contact)
+                                </div>
+                            <!--<input type="text" class="form-control" id="contact" name="Contact" required placeholder="Contact No">-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Message, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                        <!--<label for="pass" style="color:white; font-size:15px" class="col-sm-4 control-label">Message</label>-->
+                        <div class="col-sm-6">
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", rows = "5" })
+                            
+                            <!--<input type="text" class="form-control input-lg" id="contact" name="Message" required placeholder="Your Message" />-->
+                            <!--<textarea class="form-control" name="Message" rows="5" ></textarea>-->
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" style="margin-left:25em; margin-top:2em">
+                        <input type="submit" class="btn btn-success" value="Submit">
+                    </div>
+
+                </div>
+                }
+            
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+

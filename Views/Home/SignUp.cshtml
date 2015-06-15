@@ -1,0 +1,198 @@
+﻿
+@{
+    Layout = null;   
+    
+}
+@model Term_Project.Models.User
+<!DOCTYPE html>
+
+<html>
+<head>
+  
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="~/Content/image/logo.ico" />
+    <script src="~/Content/bootstrap.js" type="text/javascript"></script>
+    <title>SignUp</title>
+    </head>
+    <body style="background-image:url(../Content/image/bg03.jpg); background-repeat:repeat">
+        <div class="row">
+            <div class="col-lg-4">
+                <h1 style="color:skyblue; font-size:3em; font-weight:bold; font-family:'Bradley Hand ITC'; margin-left:1.5em">Mobile Arena</h1>
+            </div>
+
+            <div class="pull-right" style="margin-right:4em; margin-top:2em; ">
+                <input class="btn" type="submit" value="Login" style="margin-right:0.5em; background-color:lightgreen" />
+            </div>
+            <div class="col-lg-3 pull-right">
+                <h1 style="color:burlywood; font-size:3em; font-weight:bold; font-family:'Angsana New'; margin-right:1.5em">Sign Up</h1>
+            </div>
+        </div>
+
+
+        <hr />
+        <br />
+
+        <div class="row">
+            <div class=" col-lg-7">
+                <img src="~/Content/image/phone/m010.png" height="400" width="800" style="padding-left:3em">
+            </div>
+            <div class="col-lg-5" padding-left:3em">
+                @using (Html.BeginForm(FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+                        <!--<form class="form-horizontal" action="~/Client/AddClient" method="post">-->
+                        <div class="row">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FirstName, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                                <!--<label for="name" style="color:white" class="col-sm-4 control-label">First Name</label>-->
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Full Name" })
+                                    <div style="color:red">
+                                        @Html.ValidationMessageFor(model => model.FirstName)
+                                    </div>
+                                    <!--<input type="text" class="form-control" id="name" name="FirstName" required placeholder="First Name">-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LastName, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                                <!--<label for="name" style="color:white" class="col-sm-4 control-label">Last Name</label>-->
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name" })
+                                    <div style="color:red">  @Html.ValidationMessageFor(model => model.LastName) </div>
+                                    <!--<input type="text" class="form-control" id="name" name="LastName" required placeholder="Last Name">-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label",Type = "Email" })
+                                <!--<label for="email" style="color:white" class="col-sm-4 control-label">Email</label>-->
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-Mail", id = "UserName" })
+                                    <div style="color:red">
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                    </div>
+                                    <input type="button" id="b1" value="Check" class="btn btn-default" />
+                                    <div id="result1" style="color:red"></div>
+                                    <div id="result2" style="color:lightgreen"></div>
+                                    @Scripts.Render("~/bundles/jquery")
+                                    <script>
+
+                                        $(document).ready(function () {
+
+                                            $('#checking').hide();
+
+                                            $('#b1').click(function () {
+
+                                                var userName = $('#UserName').val();
+
+                                                //alert('User Name ='+ userName);
+                                                $('#checking').show();
+                                                $.getJSON("/home/CheckUserName?UserName=" + userName, function (data) {
+                                                    $('#checking').hide();
+                                                    if (data) {
+                                                        $('#result1').text("");
+                                                        $('#result2').text("User Name is available");
+                                                    }
+                                                    else {
+                                                        $('#result2').text("");
+                                                        $('#result1').text("User already exists in database");
+                                                    }
+                                                });
+
+                                            });
+
+                                        });
+                                    </script>
+                                    <!--<input type="text" class="form-control" id="email" name="Email" required placeholder="Email">-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label", Type = "Password" })
+                                <!--<label for="pass" style="color:white" class="col-sm-4 control-label">Password</label>-->
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Password", Type = "Password" })
+                                    <div style="color:red">
+                                        @Html.ValidationMessageFor(model => model.Password)
+                                    </div>
+                                    <!--<input type="password" class="form-control" id="pass1" name="Password" required placeholder="Password">-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ConfirmPassword, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                                <!--<label for="pass" style="color:white" class="col-sm-4 control-label">Re-Enter Password</label>-->
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Password" })
+                                    <div style="color:red">
+                                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DateOfBirth, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                                <!--<label for="add" style="color:white" class="col-sm-4 control-label">Date of Birth</label>-->
+                                <div class="col-sm-6">
+                                    
+                                    @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", placeholder = "MM/DD/YYYY" })
+                                    <div style="color:red">
+                                        @Html.ValidationMessageFor(model => model.DateOfBirth)
+                                    </div>
+                                    <!--<input type="date"  class="form-control" id="add" name="DateOfBirth" required>-->
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.City, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                                <!--<label for="add" style="color:white" class="col-sm-4 control-label">City</label>-->
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "City" })
+                                    <div style="color:red">
+                                        @Html.ValidationMessageFor(model => model.City)
+                                    </div>
+                                    <!--<input type="text" class="form-control" id="add" name="City" required placeholder="City">-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Country, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                                <!--<label for="add" style="color:white" class="col-sm-4 control-label">Country</label>-->
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(m => m.Country, new { @class = "form-control", placeholder = "Country" })
+                                    <div style="color:red">
+                                        @Html.ValidationMessageFor(model => model.Country)
+                                    </div>
+                                    <!--<input type="text" class="form-control" id="add" name="Country" required placeholder="Country">-->
+                                </div>
+                            </div>
+
+
+                            <div class=" btn-group" style="margin-left:10em">
+
+                                <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-success" value="Sign Up">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+
+        <div style="background-image:url(../../Content/image/subBg/bg4.jpg);text-align: center; opacity:0.8; font-size:1.4em" class="navbar-inverse bottom">
+            <h3 class="list-inline small" style=" padding-top:1em; font-weight:bold;">Copyright &copy; 2015. Design by Farhan Aamir</h3>
+            <h3 class="list-inline small" style=" padding-bottom:1em; font-weight:bold;">BITT12M036</h3>
+
+        </div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+        <script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+        </script>
+    </body>
+</html>

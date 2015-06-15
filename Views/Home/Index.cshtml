@@ -1,0 +1,66 @@
+﻿
+@using Term_Project.Models
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/content/engine1/style1.css" />
+    <script type="text/javascript" src="~/content/engine1/jquery1.js"></script>
+    <title>Home</title>
+</head>
+    
+    <div id="wowslider-container1" style="margin-top:3em">
+        <div class="ws_images ">
+            <ul>
+                <li><img src="~/content/data1/images/m01.jpg" alt="m01" title="By Farhan" id="wows1_0" /></li>
+                <li><img src="~/content/data1/images/m02.jpg" alt="m02"  id="wows1_1" /></li>
+                <li><img src="~/content/data1/images/m03.jpg" alt="m03"  id="wows1_2" /></li>
+                <li><img src="~/content/data1/images/m04.jpg" alt="m04"  id="wows1_3" /></li>
+                <li><img src="~/content/data1/images/m05.jpg" alt="m05"  id="wows1_4" /></li>
+            </ul>
+        </div>
+        <div class="ws_bullets">
+            <div>
+                <a href="#" title="m01"><span><img src="~/content/data1/tooltips/m01.jpg" alt="m01" />1</span></a>
+                <a href="#" title="m02"><span><img src="~/content/data1/tooltips/m02.jpg" alt="m02" />2</span></a>
+                <a href="#" title="m03"><span><img src="~/content/data1/tooltips/m03.jpg" alt="m03" />3</span></a>
+                <a href="#" title="m04"><span><img src="~/content/data1/tooltips/m04.jpg" alt="m04" />4</span></a>
+                <a href="#" title="m05"><span><img src="~/content/data1/tooltips/m05.jpg" alt="m05" />5</span></a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div style="background-image:url(../../Content/image/subBg/bg08.jpg);background-repeat:inherit; margin-top:2em; padding-bottom:2em">
+    <div style="margin-left:3em; padding-top:2em;padding-bottom:2em">
+        <h4 style="color: white;">Welcome to Mobile Arena. We Hope that you will find your desired phone or accessories.</h4>
+        <h4 style="color: white;">Followig are some Popular Mobiles:</h4>
+    </div>
+    <div class="row">
+        @foreach (Mobile x in Model)
+        {
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+
+                <form action="~/Home/Search" method="post">
+                    <div class="header">
+                        <h3 style="font-family:Dotum;color:brown"><label>@x.Company</label></h3>
+
+                    </div>
+
+                    <div class="thumbnews thumb-shadow post-thumbnail">
+                        <a class="fancybox" href="~/Content/image/phone/@(x.Model)_1.jpg" data-fancybox-group="gallery"><img class="img-rounded" src="~/Content/image/phone/@(x.Model)_1.jpg" height=" 200" width="300" /></a>
+                    </div>
+                    <div class="news thumbnews">
+                        <h4>@x.Model</h4>
+                        <h4>Rs. @x.Price</h4>
+                    </div>
+                    <input type="hidden" name="mobileName" value="@x.Model" />
+                    <button type="submit" class=" btn btn-info"> Details ></button>
+                </form>
+            </div>
+        }
+    </div>
+</div>
+    
+    <script type="text/javascript" src="~/content/engine1/wowslider1.js"></script>
+<script type="text/javascript" src="~/content/engine1/script1.js"></script>
+

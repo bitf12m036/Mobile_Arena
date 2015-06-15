@@ -1,0 +1,112 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminShared.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div>
+    <div class="row">
+        <div class=" col-lg-7">
+            <img class="img-responsive img-responsive" src="~/Content/image/phone/edge07.jpg" style="padding-left:3em">
+        </div>
+        <div class="col-lg-5 ">
+            <h1 style="color:burlywood; font-size:10em; font-weight:bold; font-family:'Angsana New'; margin-right:1.5em">Add New Mobile</h1>
+            <form class="form-horizontal"  action="~/Admin/SaveMobile" method="post" enctype="multipart/form-data">
+
+                <div class="row">
+
+                    <div class="form-group">
+                        <label for="name" style="color:white; font-size:2em" class="col-sm-4 control-label">Company</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name"  name="Company" required placeholder="Company">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" style="color:white;font-size:2em" class="col-sm-4 control-label">Model</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name"  name="Model" required placeholder="Mbile Model">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" style="color:white;font-size:2em" class="col-sm-4 control-label">Price</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="email"  name="Price" required placeholder="Price">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass" style="color:white;font-size:2em" class="col-sm-4 control-label">RAM</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="pass1"  name="RAM" required placeholder="RAM">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass" style="color:white;font-size:2em" class="col-sm-4 control-label">ROM</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="pass2"  name="ROM" required placeholder="ROM">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">Screen</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add" name="Screen" required placeholder="Screen Size">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">Processor</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add"  name="Processor" required placeholder="Processor">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">Operating System</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add"  name="OSType" required placeholder="OS">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">OS Model</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add" name="OSModel" required placeholder="Version">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">Primary Camera</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add" name="PrimaryCamera" required placeholder="Primary Camera">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">Secondary Camera</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add" name="SecandaryCamera" required placeholder="Secondary Camera">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">Rating</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add" name="Rating" required placeholder="Rating">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add" style="color:white;font-size:2em" class="col-sm-4 control-label">Arrival</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="add" name="Arrival" required placeholder="Arrival">
+                        </div>
+                    </div>
+                    <div class=" btn-group" style="margin-left:10em">
+                        <div class="col-sm-6">
+                            <input type="file" multiple value="Upload Mobile Image" class="glyphicon-save-file" style="margin-right:1em" name="img"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="submit" class="btn btn-success" value="Add Mobile">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

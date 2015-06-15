@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminShared.cshtml";
+}
+@model Term_Project.Models.User
+<div class="row">
+    <div class=" col-lg-7">
+        <img class="img-rounded img-responsive" src="~/Content/image/subBg/Client02.jpg" style="padding-left:3em; padding-top:3em">
+    </div>
+    <div class="col-lg-5" style="opacity:0.6; padding-left:3em">
+        <h1 style="color:burlywood; font-size:10em; font-weight:bold; font-family:'Angsana New'; margin-right:1.5em">Update Existing Client</h1>
+        <!--<form class="form-horizontal" style="opacity:0.6;" action="~/Admin/SaveUpdatedClient" method="post">-->
+        @using (Html.BeginForm("SaveUpdatedClient","Admin",FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <!--<form class="form-horizontal" action="~/Client/AddClient" method="post">-->
+                <div class="row">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FirstName, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                        
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", value = Model.FirstName })
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LastName, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                        
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", value = Model.LastName })
+                            @Html.ValidationMessageFor(model => model.LastName)
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                       
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", value = Model.Email })
+                            @Html.ValidationMessageFor(model => model.Email)
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                        
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", value = Model.Password })
+                            @Html.ValidationMessageFor(model => model.Password)
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ConfirmPassword, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                       
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", value = Model.Password})
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DateOfBirth, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                        
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", value = Model.DateOfBirth })
+                            @Html.ValidationMessageFor(model => model.DateOfBirth)
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.City, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                       
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.City, new { @class = "form-control", value = Model.City })
+                            @Html.ValidationMessageFor(model => model.City)
+                           
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Country, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
+                       
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(m => m.Country, new { @class = "form-control", value = Model.Country })
+                            @Html.ValidationMessageFor(model => model.Country)
+                           
+                        </div>
+                    </div>
+
+
+                    <div class=" btn-group" style="margin-left:10em">
+
+                        <div class="col-sm-4">
+                            <input type="submit" class="btn btn-success" value="Save Update">
+                        </div>
+                    </div>
+
+
+                </div>
+            </fieldset>
+        }
+            
+
+    </div>
+</div>

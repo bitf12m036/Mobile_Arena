@@ -1,0 +1,50 @@
+﻿
+
+@using Term_Project.Models
+@model List<Mobile>
+<div class="row">
+   <div class="col-lg-2 " style="padding-left:3em; padding-top:3em">
+       <div class="list-group">
+           <a href="#" class="list-group-item active" style="font-weight:bold;font-size:large;background-color:skyblue">Catagories</a>
+           @foreach (string c in ViewBag.companies)
+           {
+
+            <a href="~/Home/Mobile?companyName=@c" class="list-group-item " style="font-size:large">@c</a>
+
+           }
+       </div>
+   </div>
+    <div class="col-lg-10">
+        <div class="row img-responsive img-rounded" style="background-image:url(../../Content/image/subBg/bg08.jpg);background-repeat:inherit; margin-top:2em; padding-bottom:2em">
+            <h3 style="font-family:Dotum;color:brown; font-weight:bold; padding-left:2em; font-size:5em"><label>@Session["company"]</label></h3>
+            @foreach (Mobile x in Model)
+            {
+                
+                <div class="col-md-3">
+
+                    <form action="~/Home/Search" method="post">
+                        <div class="header">
+
+                            <h4>@x.Model</h4>
+                        </div>
+                        <div class="thumbnews thumb-shadow post-thumbnail">
+                            <a class="fancybox" href="~/Content/image/phone/@(x.Model)_1.jpg" data-fancybox-group="gallery"><img class="img-rounded" src="~/Content/image/phone/@(x.Model)_1.jpg" height=" 200" width="300" /></a>
+                        </div>
+                        <div class="news thumbnews">
+
+                            <h4>Rs. @x.Price</h4>
+                        </div>
+                        <input type="hidden" name="mobileName" value="@x.Model" />
+                        <button type="submit" class=" btn btn-info"> Details ></button>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+            }
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="~/content/engine1/wowslider1.js"></script>
+<script type="text/javascript" src="~/content/engine1/script1.js"></script>
+

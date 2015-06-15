@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminShared.cshtml";
+}
+
+@using Term_Project.Models
+@model List<User>
+<div>
+    
+        
+            <h1 style="color:burlywood; font-size:10em; font-weight:bold; font-family:'Angsana New'; margin-right:1.5em">Client Details</h1>
+       
+        
+    
+    <div class="col-lg-12 col-sm-offset-0">
+        <table class="table table-responsive table-bordered table-condensed table-striped" style="background-color:lightsteelblue; ">
+
+            <tr style="width:3em">
+                <th style="color:chocolate; font-weight:bolder;font-size:4em">
+                    All Clients List
+                </th>
+
+            </tr>
+
+            @foreach (User x in Model)
+            {
+                <tr style="font-size:3em">
+                    <td style="color:black">
+                        Client
+                    </td> 
+                    <td style="color:black">
+                        @(x.FirstName) @(x.LastName)
+                    </td>
+                    <td style="color:black">
+
+                        @(x.Email)
+                    </td>
+                    <td style="color:black">
+
+                        @(x.Country)
+                    </td>
+                    <td style="color:black">
+
+                        <a href="~/Admin/ChangeClient?email=@(x.Email)" style="color:chocolate">Edit</a>
+                    </td>
+                    <td style="color:black">
+
+                        <a href="~/Admin/RemoveClient?email=@(x.Email)" style="color:chocolate">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

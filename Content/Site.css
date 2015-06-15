@@ -1,0 +1,23 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+#navHover li a:hover{
+    background-color:gray;
+    color:gold;
+}
+
+#navBtn input:hover{
+     background-color:gold;
+     color:black;
+}
+active {
+     background-color:gray;
+    color:gold;
+}
+
+
+

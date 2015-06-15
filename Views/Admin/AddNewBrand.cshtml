@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminShared.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div>
+    <div class="row">
+        <div class=" col-lg-7">
+            <img class="img-responsive img-responsive" src="~/Content/image/phone/edge07.jpg" style="padding-left:3em">
+        </div>
+        <div class="col-lg-5 ">
+            <h1 style="color:burlywood; font-size:10em; font-weight:bold; font-family:'Angsana New'; margin-right:1.5em">Add New Brand</h1>
+            <form class="form-horizontal" action="~/Admin/SaveBrand" method="post" enctype="multipart/form-data">
+
+                <div class="row">
+
+                    <div class="form-group">
+                        <label for="name" style="color:white; font-size:2em" class="col-sm-4 control-label">Brand Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name" name="Company" required placeholder="Company">
+                        </div>
+                    </div>
+                    
+                    <div class=" btn-group" style="margin-left:10em">
+                        <div class="col-sm-4">
+                            <input type="submit" class="btn btn-success" value="Add Brand">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
