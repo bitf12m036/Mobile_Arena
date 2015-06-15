@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="99d5d7d4bd0e42ab9e74c24092c6bfb4" Name="Diagram1">
-        <EntityTypeShape EntityType="Phone_InfoModel.Accessory" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Phone_InfoModel.Feedback" Width="1.5" PointX="5.875" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Phone_InfoModel.Mobile" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Phone_InfoModel.User" Width="1.5" PointX="2" PointY="0.75" IsExpanded="true" />
