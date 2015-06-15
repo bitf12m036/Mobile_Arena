@@ -20,7 +20,7 @@
             <div class="col-lg-4">
                 <h1 style="color:skyblue; font-size:3em; font-weight:bold; font-family:'Bradley Hand ITC'; margin-left:1.5em">Mobile Arena</h1>
             </div>
-
+            <div class="col-lg-2" style="margin-top:2em; margin-left:15em"><a href="~/Home/Index"><h5 style="color:skyblue">Go back Home</h5></a></div>
             <div class="pull-right" style="margin-right:4em; margin-top:2em; ">
                 <input class="btn" type="submit" value="Login" style="margin-right:0.5em; background-color:lightgreen" />
             </div>
@@ -70,7 +70,7 @@
                                 @Html.LabelFor(model => model.Email, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label",Type = "Email" })
                                 <!--<label for="email" style="color:white" class="col-sm-4 control-label">Email</label>-->
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-Mail", id = "UserName" })
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-Mail", id = "UserName" , Type = "Email" })
                                     <div style="color:red">
                                         @Html.ValidationMessageFor(model => model.Email)
                                     </div>
@@ -124,7 +124,7 @@
                                 @Html.LabelFor(model => model.ConfirmPassword, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
                                 <!--<label for="pass" style="color:white" class="col-sm-4 control-label">Re-Enter Password</label>-->
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Password" })
+                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Password", Type = "Password" })
                                     <div style="color:red">
                                         @Html.ValidationMessageFor(model => model.ConfirmPassword)
                                     </div>
@@ -135,7 +135,7 @@
                                 <!--<label for="add" style="color:white" class="col-sm-4 control-label">Date of Birth</label>-->
                                 <div class="col-sm-6">
                                     
-                                    @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", placeholder = "MM/DD/YYYY" })
+                                    @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", placeholder = "MM/DD/YYYY" ,Type = "Date"})
                                     <div style="color:red">
                                         @Html.ValidationMessageFor(model => model.DateOfBirth)
                                     </div>
