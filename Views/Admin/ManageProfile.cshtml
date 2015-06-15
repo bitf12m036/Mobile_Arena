@@ -53,7 +53,7 @@
                                 @Html.LabelFor(model => model.Email, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label", Type = "Email" })
 
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", value = Model.Email })
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", value = Model.Email, Type= "email" })
                                     <div style="color:red">
                                         @Html.ValidationMessageFor(model => model.Email)
                                         </div>
@@ -64,7 +64,7 @@
                                 @Html.LabelFor(model => model.Password, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label", Type = "Password" })
 
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", value = Model.Password })
+                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", value = Model.Password, Type="password" })
                                     <div style="color:red">
                                         @Html.ValidationMessageFor(model => model.Password)
                                         </div>
@@ -75,7 +75,7 @@
                                 @Html.LabelFor(model => model.ConfirmPassword, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label", Type = "Password" })
 
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", value = Model.Password })
+                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", value = Model.Password, Type="password" })
                                     <div style="color:red">
                                         @Html.ValidationMessageFor(model => model.ConfirmPassword)
                                         </div>
@@ -85,7 +85,7 @@
                                 @Html.LabelFor(model => model.DateOfBirth, new { style = "font-size:15px; color:white", @class = "col-sm-4 control-label" })
 
                                 <div class="col-sm-6">
-                                    @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", value = Model.DateOfBirth })
+                                    @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", value = Model.DateOfBirth, Type="date" })
                                     <div style="color:red">
                                         @Html.ValidationMessageFor(model => model.DateOfBirth)
                                         </div>
